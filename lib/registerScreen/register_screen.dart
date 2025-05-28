@@ -13,7 +13,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(colorGreen),
-      // body: Center(child: Image.asset(logoTipo)),
+      body: Center(child: Text("Register screen")),
     );
   }
 }
