@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hellofarmer_app/splashScreen/splash_screen.dart';
+import 'package:hellofarmer_app/features/routes/app_routes.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -10,8 +11,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SplashScreen(),
+    return MaterialApp(
+      initialRoute: AppRoutes.splash,
+      routes: AppRoutes.routes,
     );
   }
 }
