@@ -19,7 +19,10 @@ class AddToCartButton extends StatelessWidget {
       onPressed: onPressed,
       child: const Text(
         'Adicionar ao Carrinho',
-        style: TextStyle(fontSize: 18),
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 18,
+        ),
       ),
     );
   }

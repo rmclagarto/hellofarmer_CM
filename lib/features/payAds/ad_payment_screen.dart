@@ -29,19 +29,6 @@ class _AdPaymentScreenState extends State<AdPaymentScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 24),
-            
-            // Título
-            const Center(
-              child: Text(
-                'Pagamento Anúncio',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const SizedBox(height: 24),
-            
             // Planos
             const Text(
               'Planos:',
@@ -58,7 +45,7 @@ class _AdPaymentScreenState extends State<AdPaymentScreen> {
                 Expanded(
                   child: AdPlanCard(
                     title: 'Básico',
-                    price: '\$ 4.99',
+                    price: '4.99 €',
                     duration: '7 Dias',
                     isSelected: _selectedPlan == 'basic',
                     onTap: () => setState(() => _selectedPlan = 'basic'),
@@ -70,7 +57,7 @@ class _AdPaymentScreenState extends State<AdPaymentScreen> {
                 Expanded(
                   child: AdPlanCard(
                     title: 'Premium',
-                    price: '\$ 12.99',
+                    price: '12.99 €',
                     duration: '30 Dias',
                     isSelected: _selectedPlan == 'premium',
                     onTap: () => setState(() => _selectedPlan = 'premium'),
@@ -101,14 +88,14 @@ class _AdPaymentScreenState extends State<AdPaymentScreen> {
                 const SizedBox(height: 8),
                 PaymentMethodCard(
                   icon: Icons.account_balance,
-                  label: 'MB-way',
+                  label: 'MB Way',
                   isSelected: _selectedPaymentMethod == 'mb',
                   onTap: () => setState(() => _selectedPaymentMethod = 'mb'),
                 ),
                 const SizedBox(height: 8),
                 PaymentMethodCard(
                   icon: Icons.payment,
-                  label: 'Pay',
+                  label: 'PayPal',
                   isSelected: _selectedPaymentMethod == 'pay',
                   onTap: () => setState(() => _selectedPaymentMethod = 'pay'),
                 ),

@@ -22,10 +22,10 @@ class PaymentMethodCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: isSelected ? Constants.primaryColor : Colors.grey[100],
+          color: isSelected ? Constants.primaryColor : Colors.transparent,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: isSelected ? Constants.primaryColor : Colors.transparent,
+            color: isSelected ? Colors.white : Colors.transparent,
             width: 2,
           ),
         ),
@@ -33,7 +33,7 @@ class PaymentMethodCard extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: isSelected ? Constants.primaryColor : Colors.grey[600],
+              color: isSelected ? Colors.white : Colors.black,
               size: 28,
             ),
             const SizedBox(width: 16),
@@ -42,7 +42,7 @@ class PaymentMethodCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: isSelected ? Constants.primaryColor : Colors.black,
+                color: isSelected ? Colors.white : Colors.black,
               ),
             ),
           ],

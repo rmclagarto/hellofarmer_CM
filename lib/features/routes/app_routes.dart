@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hellofarmer_app/features/splash/splash_screen.dart';
-import 'package:hellofarmer_app/features/auth/screens/login_screen.dart';
-import 'package:hellofarmer_app/features/auth/screens/register_screen.dart';
-import 'package:hellofarmer_app/features/auth/screens/recover_password_screen.dart';
+import 'package:hellofarmer_app/features/auth/screen/login_screen.dart';
+import 'package:hellofarmer_app/features/auth/screen/register_screen.dart';
+import 'package:hellofarmer_app/features/auth/screen/recover_password_screen.dart';
 import 'package:hellofarmer_app/features/home/screen/home_screen.dart';
-import 'package:hellofarmer_app/features/payAds/payAds_screen.dart';
+import 'package:hellofarmer_app/features/payAds/ad_payment_screen.dart';
 import 'package:hellofarmer_app/features/AD/preview_ad.dart';
 
 class AppRoutes{

@@ -7,38 +7,42 @@ class LoginForm extends StatelessWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final VoidCallback onLogin;
+  final bool isLoading;
+  final String? errorMessage;
 
   const LoginForm({
     super.key,
     required this.emailController,
     required this.passwordController,
     required this.onLogin,
+    this.isLoading = false,
+    this.errorMessage,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 5,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Constants.borderRadiusCard)),
       child: Padding(
         padding: const EdgeInsets.all(28.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
               _buildTitle(),
-              const SizedBox(height: 20),
+              const SizedBox(height: Constants.spacingMedium),
               _buildEmailField(),
-              const SizedBox(height: 20),
+              const SizedBox(height: Constants.spacingMedium),
               _buildPasswordField(),
-              const SizedBox(height: 10),
+              const SizedBox(height: Constants.spacingSmall),
               _buildForgotPassword(context),
-              const SizedBox(height: 20),
+              const SizedBox(height: Constants.spacingMedium),
               _buildLoginButton(),
-              const SizedBox(height: 40),
-              _buildDivider('OU'),
-              const SizedBox(height: 40),
+              const SizedBox(height: Constants.spacingLarge),
+              _buildDivider(),
+              const SizedBox(height: Constants.spacingLarge),
               _buildSocialButtons(),
-              const SizedBox(height: 20),
+              const SizedBox(height: Constants.spacingMedium),
               _buildSignUp(context),
             ],
           ),
@@ -49,7 +53,7 @@ class LoginForm extends StatelessWidget {
 
   Widget _buildTitle() {
     return const Text(
-      'Entrar',
+      Constants.loginTitle,
       style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
     );
   }
@@ -61,11 +65,11 @@ class LoginForm extends StatelessWidget {
       decoration: InputDecoration(
         labelText: 'Email',
         prefixIcon: const Icon(Icons.email),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(Constants.borderRadiusLarge)),
         filled: true,
         fillColor: Colors.white,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: BorderRadius.circular(Constants.borderRadiusLarge),
           borderSide: BorderSide(color: Colors.grey),
         )
       ),
@@ -80,11 +84,11 @@ class LoginForm extends StatelessWidget {
       decoration: InputDecoration(
         labelText: 'Senha',
         prefixIcon: const Icon(Icons.lock),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(Constants.borderRadiusLarge)),
         filled: true,
         fillColor: Colors.white,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(40),
+          borderRadius: BorderRadius.circular(Constants.borderRadiusLarge),
           borderSide: BorderSide(color: Colors.grey),
         ),
       ),
@@ -101,7 +105,7 @@ class LoginForm extends StatelessWidget {
               AppRoutes.recoverPassword,
             ),
         child: const Text(
-          'Recuperar palavra-passe',
+          Constants.forgotPassword,
           style: TextStyle(color: Constants.textColor, fontSize: 14),
         ),
       ),
@@ -115,26 +119,26 @@ class LoginForm extends StatelessWidget {
         onPressed: onLogin,
         style: ElevatedButton.styleFrom(
           backgroundColor: Constants.secondaryColor,
-          padding: const EdgeInsets.symmetric(vertical: 15),
+          padding: const EdgeInsets.symmetric(vertical: Constants.buttonVerticalPadding),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(40),
+            borderRadius: BorderRadius.circular(Constants.spacingLarge),
           ),
         ),
         child: const Text(
-          "Acessar",
+          Constants.loginButton,
           style: TextStyle(fontSize: 18, color: Colors.white),
         ),
       ),
     );
   }
 
-  Widget _buildDivider(String text) {
+  Widget _buildDivider() {
     return Row(
       children: [
         const Expanded(child: Divider()),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text(text),
+          child: Text(Constants.orDivider),
         ),
         const Expanded(child: Divider()),
       ],
@@ -158,13 +162,13 @@ class LoginForm extends StatelessWidget {
     String assetPath;
     switch (name) {
       case 'Google':
-        assetPath = AppImages.google_logo;
+        assetPath = AppImages.googleLogo;
         break;
       case 'Facebook':
-        assetPath = AppImages.facebook_logo;
+        assetPath = AppImages.facebbokLogo;
         break;
       case 'IOS':
-        assetPath = AppImages.ios_logo;
+        assetPath = AppImages.iosLogo;
         break;
       default:
         assetPath = 'assets/default_logo.png';
@@ -195,8 +199,8 @@ class LoginForm extends StatelessWidget {
         text: const TextSpan(
           style: TextStyle(color: Colors.black, fontSize: 16),
           children: [
-            TextSpan(text: "Não é membro? "),
-            TextSpan(text: "Adere já", style: TextStyle(color: Colors.blue)),
+            TextSpan(text: Constants.notAMember),
+            TextSpan(text: Constants.signUpNow, style: TextStyle(color: Colors.blue)),
           ],
         ),
       ),

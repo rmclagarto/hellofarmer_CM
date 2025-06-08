@@ -12,16 +12,15 @@ dependencies:
   firebase_core: ^3.13.1
   shared_preferences: ^2.5.3
   flutter_map: ^6.0.0
-
+  geolocator: ^14.0.1
+  sensors_plus: ^6.1.1
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
   flutter_launcher_icons: ^0.11.0
-
-
-
 
 flutter_icons:
   android: true
@@ -37,3 +36,5 @@ flutter:
   - assets/images/Google_Logo.png
   - assets/images/Facebook_Logo.png
   - assets/images/IOS_Logo.png
+  - assets/images/AgricultorAvatar.jpg
+  - assets/images/baldeZinco.jpg

@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // Precarregar a imagem antes de iniciar o temporizador
+    // Pre-carregar a imagem antes de iniciar o temporizador
     WidgetsBinding.instance.addPostFrameCallback((_) {
       precacheImage(const AssetImage(AppImages.logo), context).then((_) {
         _checkLoginState();
@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
       final prefs = await SharedPreferences.getInstance();
       final isLoggedIn = prefs.getBool(SharedPrefsKeys.isLoggedIn) ?? false;
 
-      Timer(Duration(seconds: 3), () {
+      Timer(Duration(seconds: 2), () {
         if (!mounted) return;
         Navigator.pushReplacementNamed(
           context,
@@ -49,7 +49,13 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Constants.primaryColor,
-      body: const Center(child: Image(image: AssetImage(AppImages.logo))),
+      body: const Center(
+        child: Image(
+          image: AssetImage(
+            AppImages.logo,
+          ),
+        ),
+      ),
     );
   }
 }

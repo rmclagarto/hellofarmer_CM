@@ -24,10 +24,10 @@ class AdPlanCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: isSelected ? Constants.primaryColor : Colors.grey[100],
+          color: isSelected ? Constants.primaryColor : Colors.transparent,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: isSelected ? Constants.primaryColor : Colors.transparent,
+            color: isSelected ? Colors.white : Colors.transparent,
             width: 2,
           ),
         ),
@@ -38,7 +38,7 @@ class AdPlanCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: isSelected ? Constants.primaryColor : Colors.black,
+                color: isSelected ? Colors.white : Colors.black,
               ),
             ),
             const SizedBox(height: 8),
@@ -47,21 +47,21 @@ class AdPlanCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: isSelected ? Constants.primaryColor : Colors.black,
+                color: isSelected ? Colors.white : Colors.black,
               ),
             ),
             const SizedBox(height: 8),
             Text(
               duration,
               style: TextStyle(
-                color: isSelected ? Constants.primaryColor : Colors.grey[600],
+                color: isSelected ? Colors.white : Colors.black,
               ),
             ),
             const SizedBox(height: 8),
             Text(
               'Select',
               style: TextStyle(
-                color: isSelected ? Constants.primaryColor : Colors.grey[600],
+                color: isSelected ? Colors.white : Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),

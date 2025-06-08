@@ -3,7 +3,7 @@ import 'package:hellofarmer_app/core/app_images.dart';
 import 'package:hellofarmer_app/core/constants.dart';
 import 'package:hellofarmer_app/features/auth/widgets/register_form.dart';
 import 'package:hellofarmer_app/features/home/screen/home_screen.dart';
-import 'package:hellofarmer_app/features/auth/screens/login_screen.dart';
+import 'package:hellofarmer_app/features/auth/screen/login_screen.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -41,6 +41,10 @@ class _RegisterState extends State<Register> {
     // TO-DO [Completar]
     final email = _emailController.text.trim();
     final password = _passwordController.text;
+
+
+    debugPrint('Attempting to register user with email: $email ,password: $password');
+
     // Implementar lógica de registro
     Navigator.pushReplacement(
       context,
@@ -74,7 +78,7 @@ class _RegisterState extends State<Register> {
   Widget _buildLogoHeaderImage() {
     return Center(
       child: Image(
-        image: AssetImage(AppImages.splash_logo),
+        image: AssetImage(AppImages.splashLogo),
         height: 100,
         fit: BoxFit.contain,
       ),

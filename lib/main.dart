@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hellofarmer_app/features/routes/app_routes.dart';
 
-
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
 

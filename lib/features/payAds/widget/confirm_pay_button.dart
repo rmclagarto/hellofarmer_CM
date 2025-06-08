@@ -22,6 +22,7 @@ class ConfirmPaymentButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
+          
         ),
         onPressed: isEnabled ? onPressed : null,
         child: const Text(
@@ -29,6 +30,7 @@ class ConfirmPaymentButton extends StatelessWidget {
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
       ),
